@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Insets;
 import java.awt.Polygon;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
  
@@ -13,7 +12,7 @@ public class MyPanelClass extends JPanel {
            JFrame myFrame = new JFrame("SomeName");
             myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myFrame.setLocation(800, 350);
-            myFrame.setSize(200, 200);
+            myFrame.setSize(210, 150);
             myFrame.getContentPane().add(myPanel);
             myFrame.setVisible(true);
        }          
@@ -35,8 +34,17 @@ public class MyPanelClass extends JPanel {
                         int height = y2 - y1;
  
                         //Paint the background
-                        g.setColor(Color.GRAY);
-                        g.fillRect(x1, y1, width + 1, height + 1);
+                        g.setColor(Color.RED);
+                        g.fillRect(x1, height-80, width, y1-30);
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, height-60, width,y1-25 );
+                        g.setColor(Color.RED);
+                        g.fillRect(x1, height-40, width, y1-25);
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, height-20, width,y1-20 );
+                        g.setColor(Color.RED);
+                        g.fillRect(x1, height, width, y1-20);
+                        
                         //Draw a border
                         //g.setColor(Color.YELLOW);
                         //g.drawRect(x1, y1, width, height);
@@ -48,7 +56,18 @@ public class MyPanelClass extends JPanel {
                         //g.drawLine(x1, y2, x2, y1);
                         //g.setColor(Color.LIGHT_GRAY);
                         //g.fillOval(x1+55, y1+45, width-110, height-100);
-                      //Polygon p = new Polygon();
+                        
+                        
+                         //Paint a triangle
+                        Polygon t = new Polygon();
+                        t.addPoint(x1+110, y1+55);
+                        t.addPoint(x1, y1+110);
+                        t.addPoint(x1, y1);
+                        g.setColor(Color.BLUE);
+                        g.fillPolygon(t);
+                        
+
+                        //Polygon p = new Polygon();
                         //p.addPoint(x1 + 5, y1 + 25);
                         //p.addPoint(x1 + 20, y1 + 10);
                         //p.addPoint(x1 + 35, y1 + 25);
@@ -58,19 +77,21 @@ public class MyPanelClass extends JPanel {
                         //p.addPoint(x1 + 15, y1 + 25);
                         //g.setColor(Color.YELLOW);
                         //g.fillPolygon(p);
+                       
                         Polygon p2 = new Polygon();
-                        p2.addPoint(x1 + 25, y1 + 73);
-                        p2.addPoint(x1 + 41, y1 + 73);
-                        p2.addPoint(x1 + 47, y1 + 58);
-                        p2.addPoint(x1 + 53, y1 + 73);
-                        p2.addPoint(x1 + 69, y1 + 73);
-                        p2.addPoint(x1 + 56, y1 + 83);
-                        p2.addPoint(x1 + 61, y1 + 98);
-                        p2.addPoint(x1 + 47, y1 + 88);
-                        p2.addPoint(x1 + 34, y1 + 98);
-                        p2.addPoint(x1 + 38, y1 + 83);
+                        p2.addPoint(x1 + 20, y1 + 50);
+                        p2.addPoint(x1 + 36, y1 + 50);
+                        p2.addPoint(x1 + 42, y1 + 35);
+                        p2.addPoint(x1 + 48, y1 + 50);
+                        p2.addPoint(x1 + 64, y1 + 50);
+                        p2.addPoint(x1 + 51, y1 + 60);
+                        p2.addPoint(x1 + 56, y1 + 75);
+                        p2.addPoint(x1 + 42, y1 + 65);
+                        p2.addPoint(x1 + 29, y1 + 75);
+                        p2.addPoint(x1 + 33, y1 + 60);
                         g.setColor(Color.WHITE);
-                        g.drawPolygon(p2);
+                        g.fillPolygon(p2);
                         
+                       
             }
 }
